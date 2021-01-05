@@ -10,6 +10,9 @@ export default () => {
       <Link to="/things">
         <Menu.Item name='Things'/>
       </Link>
+      <Link to="/jeopardy">
+        <Menu.Item name='Jeopardy'/>
+      </Link>
   </Menu>
   )
 
