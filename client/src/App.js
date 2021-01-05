@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import Things from './demo/Things';
 import NoMatch from './components/NoMatch';
 import NavBar from './components/NavBar';
+import styled from 'styled-components';
 
 function App() {
   return (
