@@ -5,9 +5,10 @@ import Tile from "./Tile"
 import Question from "./Question"
 import { useHistory } from "react-router-dom"
 
-const CategoryData = () => {
+const CategoryData = ({setScore, score}) => {
 
   const [categoryData, setCategoryData] = useState([])
+  const [question, setQuestion] = useState(null)
   const history = useHistory()
 
 
@@ -26,19 +27,24 @@ const CategoryData = () => {
     }
   }
 
-  const renderQuestion = (id) => {
-    console.log("almost here")
-    history.push(`/question/${id}`)
-    
+  const renderTiles = () => {
+    return(
+      categoryData.map(c => (
+          <Grid.Column>
+            <Segment onClick={()=>setQuestion(c)}><Tile {...c}/></Segment>
+          </Grid.Column>
+        )
+      )
+    )
   }
 
+
   return(
-    categoryData.map(c => (
-          <Grid.Column>
-            <Segment onClick={()=>renderQuestion(c.id)}><Tile {...c}/></Segment>
-          </Grid.Column>
-      ))
-    )
+    <>
+    {renderTiles()}
+    <Question question={question} setQuestion={setQuestion} setScore={setScore} score={score}/>
+    </>
+  )
 }
 
 export default CategoryData
