@@ -23,10 +23,10 @@ const Categories = () => {
   }
 
   return(
-    categories.map(c => (
-          <Grid.Column>
+    categories.map((c,i) => (
+          <Grid.Column key={i}>
             <Segment>
-              <Header>
+              <Header >
                 {c.name}
               </Header>
             </Segment>

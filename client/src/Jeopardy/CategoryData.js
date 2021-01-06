@@ -29,8 +29,8 @@ const CategoryData = ({setScore, score}) => {
 
   const renderTiles = () => {
     return(
-      categoryData.map(c => (
-          <Grid.Column>
+      categoryData.map((c,i) => (
+          <Grid.Column key={i}>
             <Segment onClick={()=>setQuestion(c)}><Tile {...c}/></Segment>
           </Grid.Column>
         )
