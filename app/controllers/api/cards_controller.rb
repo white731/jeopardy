@@ -4,4 +4,5 @@ class Api::CardsController < ApplicationController
     category = Category.find(params[:category_id])
     render json: category.cards.all
   end
+
 end
