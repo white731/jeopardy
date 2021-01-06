@@ -8,6 +8,7 @@ import NoMatch from './components/NoMatch';
 import NavBar from './components/NavBar';
 import styled from 'styled-components';
 import Jeopardy from './Jeopardy/Jeopardy';
+import Question from './Jeopardy/Question';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
      <Route exact path='/' component={Home}/>
      <Route exact path='/things' component={Things}/>
      <Route exact path='/jeopardy' component={Jeopardy}/>
+     <Route exact path='/question/:id' component={Question}/>
      <Route component={NoMatch} />
     </Switch>
   </Container>
